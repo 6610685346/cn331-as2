@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Users</title>
+    <style>
+        h1 {
+            color: SaddleBrown;
+        }
+
+        h2 {
+            color: Peru;
+        }
+
+        a:link,
+        a:visited {
+            background-color: #f44336;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover,
+        a:active {
+            background-color: red;
+        }
+
+        .spelling-error {
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: red;
+        }
+
+        .button {
+            background-color: SandyBrown;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body style="background-color:AntiqueWhite">
+    <center>
+        {% block body %}
+        {% endblock %}
+    </center>
+</body>
+
+</html>
