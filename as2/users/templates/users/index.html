@@ -1,0 +1,14 @@
+{% extends 'users/layout.html' %}
+{% block body %}
+<h1 style="font-size:300%;">Welcome to quotaapp</u></h1>
+
+<h2 style="font-size:150%;">Username: {{ request.user.username }}</h2>
+
+<a href="{% url 'quotaapp:index' %}">ดูรายวิชา</a>
+<h2></h2>
+<a href="{% url 'quotaapp:quota_request' %}">ขอโควต้าภาคเรียนที่ 1</a>
+<h2></h2>
+<a href="{% url 'quotaapp:quota_semester2' %}">ขอโควต้าภาคเรียนที่ 2</a>
+<h2></h2>
+<a href="{% url 'users:logout' %}">ออกจากระบบ</a>
+{% endblock %}

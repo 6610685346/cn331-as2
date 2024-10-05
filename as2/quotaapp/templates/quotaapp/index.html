@@ -1,0 +1,72 @@
+{% extends 'quotaapp/layout.html' %}
+{% block body %}
+
+<h1 style="color:rgb(19, 121, 139);">รายวิชา</u></h1>
+
+<h2 style="color:rgb(19, 125, 139);">ภาคการศึกษาที่ 1</u></h2>
+
+<table id="customers">
+    <tr>
+        <th style="font-size:125%;">
+            <center> รหัสวิชา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ชื่อวิชา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> จำนวนที่นั่ง </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> สถานะ </center>
+        </th>
+    </tr>
+    <ul>
+        {% for subject in subjects %}
+        <tr>
+            {% if subject.semester == '1' %}
+            <td>{{ subject.course.subject_id }}</td>
+            <td>{{ subject.course.subject_name }}</td>
+            <td>{{ subject.current_seat }} / {{ subject.seat }}</td>
+            <td style="color:rgb(47, 0, 255);">{{ subject.q_status }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </ul>
+</table>
+
+<h2 style="color:rgb(19, 125, 139);">ภาคการศึกษาที่ 2</u></h2>
+
+<table id="customers">
+    <tr>
+        <th style="font-size:125%;">
+            <center> รหัสวิชา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ชื่อวิชา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> จำนวนที่นั่ง </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> สถานะ </center>
+        </th>
+    </tr>
+    <ul>
+        {% for subject in subjects %}
+        <tr>
+            {% if subject.semester == '2' %}
+            <td>{{ subject.course.subject_id }}</td>
+            <td>{{ subject.course.subject_name }}</td>
+            <td>{{ subject.current_seat }} / {{ subject.seat }}</td>
+            <td style="color:rgb(47, 0, 255);">{{ subject.q_status }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </ul>
+</table>
+
+<h1></h1>
+
+<center>
+    <a href="{% url 'users:index' %}">กลับหน้าหลัก</a>
+    {% endblock %}

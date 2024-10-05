@@ -1,0 +1,92 @@
+{% extends 'quotaapp/layout.html' %}
+{% block body %}
+
+<h1 style="color:rgb(19, 125, 139);">ขอโควต้าภาคเรียนที่ 1</u></h1>
+
+<h2 style="color:rgb(19, 121, 139);">วิชาที่ขอโควต้า</u></h2>
+
+<table id="customers">
+    <tr>
+        <th style="font-size:125%;"> </th>
+        <th style="font-size:125%;">
+            <center> รหัสวิชา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ชื่อวิชา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ภาคเรียนที่ </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ปีการศึกษา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> จำนวนที่นั่ง </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> สถานะ </center>
+        </th>
+    </tr>
+    {%for course in course_apply %}
+    <tr>
+        <td> <a href="{% url 'quotaapp:cancel' course%}">ยกเลิก</a></td>
+        <td>{{course.course.subject_id}}</td>
+        <td>{{course.course.subject_name}}</td>
+        <td>{{course.semester}}</td>
+        <td>{{course.year}}</td>
+        <td>{{course.current_seat}} / {{course.seat}}</td>
+        <td style="color:rgb(47, 0, 255);">{{course.q_status}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<h1></h1>
+
+<h1></h1>
+<h2 style="color:rgb(19, 121, 139);">รายวิชาที่เปิดให้ขอโควต้า</u></h2>
+<table id="customers">
+    <tr>
+        <th style="font-size:125%;"> </th>
+        <th style="font-size:125%;">
+            <center> รหัสวิชา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ชื่อวิชา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ภาคเรียนที่ </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ปีการศึกษา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> จำนวนที่นั่ง </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> สถานะ </center>
+        </th>
+    </tr>
+    {%for course in other_course %}
+    <tr>
+        {% if course.semester == '1' %}
+        <td> <a href="{% url 'quotaapp:request' course%}">เลือก</a></td>
+        <td>{{course.course.subject_id}}</td>
+        <td>{{course.course.subject_name}}</td>
+        <td>{{course.semester}}</td>
+        <td>{{course.year}}</td>
+        <td>{{course.current_seat}} / {{course.seat}}</td>
+        <td style="color:rgb(47, 0, 255);">{{course.q_status}}</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+<h1></h1>
+
+<center>
+    <a href="{% url 'quotaapp:complete' %}"> ยืนยัน </a>
+</center>
+
+
+<a href="{% url 'users:index' %}">กลับหน้าหลัก</a>
+
+
+{% endblock %}

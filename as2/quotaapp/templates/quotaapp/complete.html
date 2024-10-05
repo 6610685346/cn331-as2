@@ -1,0 +1,38 @@
+{% extends 'quotaapp/layout.html' %}
+{% block body %}
+
+<h1 style="color:rgb(19, 125, 139);">ผลการขอโควต้า</u></h1>
+
+<table id="customers">
+    <tr>
+        <th style="font-size:125%;">
+            <center> รหัสวิชา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ชื่อวิชา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ภาคเรียนที่ </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> ปีการศึกษา </center>
+        </th>
+        <th style="font-size:125%;">
+            <center> จำนวนที่นั่ง </center>
+        </th>
+    </tr>
+    {%for apply in course_apply %}
+    <tr>
+        <td>{{apply.course.subject_id}}</td>
+        <td>{{apply.course.subject_name}}</td>
+        <td>{{apply.semester}}</td>
+        <td>{{apply.year}}</td>
+        <td>{{apply.current_seat}} / {{apply.seat}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<h2></h2>
+<center>
+    <a href="{% url 'users:index' %}">กลับหน้าหลัก</a>
+</center>
+{% endblock %}

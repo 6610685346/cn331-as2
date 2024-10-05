@@ -1,9 +1,10 @@
 {% extends 'users/layout.html' %}
 {% block body %}
-<h1 style="font-size:300%;"><u class="spelling-error">Login</u></h1>
+<h1 style="font-size:300%;">Login</u></h1>
 {% if message %}
-<div style="color:red">{{ message }}</div>
+<div style="color:rgb(245, 3, 3)">{{ message }}</div>
 {% endif %}
+<h1></h1>
 <form action="{% url 'users:login' %}" method="post">
     {% csrf_token %}
     <input type="text" name="username" placeholder="Username">

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>subjects</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        a:link,
+        a:visited {
+            background-color: rgb(96, 155, 244);
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover,
+        a:active {
+            background-color: rgb(255, 94, 0);
+        }
+
+        table,
+        td,
+        th,
+        tr {
+            border: 1px solid #ffffff;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+
+        .right {
+            float: right;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: rgb(215, 246, 250);
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #8ca8d2;
+            color: white
+        }
+    </style>
+</head>
+
+<body style="background-color:rgb(215, 246, 250)">
+    {% block body %}
+    {% endblock %}
+</body>
+
+</html>
