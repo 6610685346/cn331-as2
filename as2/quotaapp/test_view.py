@@ -47,4 +47,4 @@ class QuotaappViewTestCase(TestCase):
         c.post(reverse('users:login'), {
                'username': "6610685050", 'password': "Test1234"})
         response = c.get(reverse('users:index'))
-        self.assertEquals(response.status_code, 302)
+        self.assertEqual(response.status_code, 302)
